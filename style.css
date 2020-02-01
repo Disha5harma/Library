@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Cardo:400,700|Norican&display=swap');
+*{
+   margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --slant-text: "Cardo";
+    --creative-text:"Norican";
+    --primary-color:rgb(192, 255, 236);
+    --secondary-color:violet;
+    --light-color:rgb(246, 250, 252);
+    --dark-color:indigo;
+    --white-grey:rgb(68, 66, 66);
+    --transition: all .3s ease-in-out; 
+    --letterspacing: 0.5em;
+}
+body{
+    font-family: var(--slant-text);
+    line-height: 1.5rem;
+}   
+.header{
+    
+    background: linear-gradient( rgba(26, 47, 75, 0.5),rgba(0,0,0,0.3)), url("./images/home.jpg") center/cover no-repeat fixed;
+    min-height:100vh;
+}
+a{
+    text-decoration: none;
+}
+.banner{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    letter-spacing: var(--letterspacing);
+}
+.banner-btn,.menu-btn{
+    display: inline-block;
+    padding: 0.7rem 1.2rem;
+    text-transform: uppercase;
+    font-weight: 1.2rem;
+    text-emphasis: bold;
+    cursor: pointer;
+    margin-top: 2.0em;
+    color: var(--white-grey);
+    animation: show 3s ease-in-out;
+}
+.banner-btn{
+    outline: 0.5em solid var(--primary-color);
+    outline-offset: 0.2em;
+    background: linear-gradient(rgba(26, 47, 75, 0.5),rgba(0,0,0,0.3)), var(--primary-color);
+}
+.menu-btn{
+    left:10%;
+}
+.banner-btn:hover,.menu-btn:hover{
+    transition: var(--transition);
+    opacity: 0.2em;
+    color:var(--primary-color);
+    background: var(--white-grey);
+}
+.banner-title{
+    color: var(--light-color);
+    font-size: 4.2rem;
+    margin-top: 1.5em;
+    text-transform: capitalize;
+}
+.banner-subtitle{
+    font-family: var(--creative-text);
+    color:var(--primary-color);
+    line-height: 1.7rem;
+    letter-spacing: .2rem;
+}
+@keyframes show{
+    0%{
+        transform: scale(2);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.content-divider{
+    height:.7rem;
+    background: linear-gradient(to left,var(--dark-color),var(--secondary-color),var(--dark-color));
+}
+    
+.art-head{
+    padding: 0.3rem 0.3rem 0.3rem 0.3rem;
+    text-align: center;
+    background-color: var(--white-grey);
+}
+.skill{
+    text-transform: uppercase;
+    font-weight: .7rem;
+    margin: .7rem 0 .7rem 0;
+    color:var(--primary-color);
+}
+.desc{
+    max-width: 13rem;
+    margin: 0 auto;
+}
+.art-head:hover{
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+.art-head:hover .skill{
+    color:var(--dark-color);
+}
+.art-head:hover .icon{
+    transform: translateY(-5px);
+}
+@media screen and (min-width:576px){
+ .art-head{
+    float:left;
+    width:25%;
+ }/*you can also add clearfix here to avoid disalignment*/
+}
+
